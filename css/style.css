@@ -1638,10 +1638,10 @@ pre .css ~ * .id {
   padding: 0 30px;
 }
 .footer-left {
-  float: left;
+  float: right;
 }
 .footer-right {
-  float: right;
+  display: none;
 }
 .share {
   padding: 0px 75px 30px 40px;
