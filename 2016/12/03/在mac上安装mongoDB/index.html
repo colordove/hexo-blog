@@ -4,17 +4,32 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives | 秋兰青青</title>
+  <title>在mac上安装mongoDB | 秋兰青青</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Personal Site">
-<meta property="og:type" content="website">
-<meta property="og:title" content="秋兰青青">
-<meta property="og:url" content="http://HuJian21.github.io/archives/index.html">
+  <meta name="description" content="MongoDB简介MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。他的特点:高性能、易部署、易使用，存储数据非常方便。
+在mac上安装MongoDB安装Homebrew（我电脑已经装了。。。）
+brew update
+
+brew install mongodb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在mac上安装mongoDB">
+<meta property="og:url" content="http://HuJian21.github.io/2016/12/03/在mac上安装mongoDB/index.html">
 <meta property="og:site_name" content="秋兰青青">
-<meta property="og:description" content="Personal Site">
+<meta property="og:description" content="MongoDB简介MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。他的特点:高性能、易部署、易使用，存储数据非常方便。
+在mac上安装MongoDB安装Homebrew（我电脑已经装了。。。）
+brew update
+
+brew install mongodb">
+<meta property="og:image" content="http://HuJian21.github.io/2016/12/03/在mac上安装mongoDB/Robomongo.png">
+<meta property="og:updated_time" content="2016-12-02T20:11:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="秋兰青青">
-<meta name="twitter:description" content="Personal Site">
+<meta name="twitter:title" content="在mac上安装mongoDB">
+<meta name="twitter:description" content="MongoDB简介MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。他的特点:高性能、易部署、易使用，存储数据非常方便。
+在mac上安装MongoDB安装Homebrew（我电脑已经装了。。。）
+brew update
+
+brew install mongodb">
+<meta name="twitter:image" content="http://HuJian21.github.io/2016/12/03/在mac上安装mongoDB/Robomongo.png">
   
     <link rel="alternative" href="/atom.xml" title="秋兰青青" type="application/atom+xml">
   
@@ -187,200 +202,122 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-在mac上安装mongoDB" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2016/12/03/在mac上安装mongoDB/" class="article-date">
+  	<time datetime="2016-12-02T19:41:38.000Z" itemprop="datePublished">2016-12-03</time>
+</a>
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在mac上安装mongoDB
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/03/在mac上安装mongoDB/" class="archive-article-date">
-  	<time datetime="2016-12-02T19:41:38.000Z" itemprop="datePublished">Dec 3</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/03/在mac上安装mongoDB/">在mac上安装mongoDB</a>
-    </h1>
-  
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="MongoDB简介"><a href="#MongoDB简介" class="headerlink" title="MongoDB简介"></a>MongoDB简介</h1><p>MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。<br>他的特点:高性能、易部署、易使用，存储数据非常方便。</p>
+<h1 id="在mac上安装MongoDB"><a href="#在mac上安装MongoDB" class="headerlink" title="在mac上安装MongoDB"></a>在mac上安装MongoDB</h1><p>安装Homebrew（我电脑已经装了。。。）</p>
+<pre><code>brew update</code></pre>
 
-        <div class="article-info info-on-right">
-          
-          
+<pre><code>brew install mongodb</code></pre>
+<a id="more"></a>
+# 启动MongoDB服务
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<pre><code>sudo mongod --config /usr/local/etc/mongod.conf</code></pre>
+
+<p>然后看到mongo服务已经建立了。</p>
+<h1 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h1><pre><code>mongo</code></pre>
+
+<h1 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h1><pre><code>use blog</code></pre>
+
+<h1 id="安装Robomongo可视化管理工具"><a href="#安装Robomongo可视化管理工具" class="headerlink" title="安装Robomongo可视化管理工具"></a>安装Robomongo可视化管理工具</h1><p><a href="https://robomongo.org/download" target="_blank" rel="external">Robomongo下载地址</a></p>
+<p>下载完成后点击左上角create创建连接，使用默认配置项点击保存<br>选中刚刚建立的连接，点击立即连接即可连接到数据库。</p>
+<img src="/2016/12/03/在mac上安装mongoDB/Robomongo.png" alt="exex result" title="exex result">
+
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/24/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/09/24/hello-world/" class="archive-article-date">
-  	<time datetime="2016-09-24T00:56:46.000Z" itemprop="datePublished">Sep 24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/24/hello-world/">Hello World</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/05/28/else/" class="archive-article-date">
-  	<time datetime="2016-05-28T08:55:53.000Z" itemprop="datePublished">May 28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/28/else/">今天遇到的if和else问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/05/06/JavaScript编码规范/" class="archive-article-date">
-  	<time datetime="2016-05-06T03:49:14.000Z" itemprop="datePublished">May 6</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/06/JavaScript编码规范/">JavaScript编码规范</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程规范/">编程规范</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/05/05/青龙湖的黄昏/" class="archive-article-date">
-  	<time datetime="2016-05-05T04:29:39.000Z" itemprop="datePublished">May 5</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/05/青龙湖的黄昏/">青龙湖的黄昏</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/诗和文学/">诗和文学</a></li></ul>
-	</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="在mac上安装mongoDB" data-title="在mac上安装mongoDB" data-url="http://HuJian21.github.io/2016/12/03/在mac上安装mongoDB/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hujian21"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/05/04/My-New-Post/" class="archive-article-date">
-  	<time datetime="2016-05-04T13:30:06.000Z" itemprop="datePublished">May 4</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/04/My-New-Post/">测试</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试/">测试</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 </div>
       <footer id="footer">
@@ -406,8 +343,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false
