@@ -41,7 +41,7 @@
 		</hgroup>
 
 		
-		<p class="header-subtitle">HuJian的个人博客</p>
+		<p class="header-subtitle">长夏</p>
 		
 
 		
@@ -89,8 +89,6 @@
 				        
 							<li><a href="/archives">所有文章</a></li>
 				        
-							<li><a href="/tags/技术/">技术</a></li>
-				        
 							<li><a href="http://colorcat.esy.es/">demo</a></li>
 				        
 							<li><a href="http://colorcat.esy.es/public/views/me.html">关于我</a></li>
@@ -104,6 +102,10 @@
 					        
 								<a class="weibo" target="_blank" href="http://weibo.com/card1840" title="weibo">weibo</a>
 					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/jian" title="zhihu">zhihu</a>
+					        
+								<a class="mail" target="_blank" href="mailto:support@dreamhufly@163.com" title="mail">mail</a>
+					        
 								<a class="facebook" target="_blank" href="https://www.facebook.com/hujian201" title="facebook">facebook</a>
 					        
 								<a class="twitter" target="_blank" href="https://twitter.com/HuJian201" title="twitter">twitter</a>
@@ -115,7 +117,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/编程规范/" style="font-size: 10px;">编程规范</a> <a href="/tags/诗和文学/" style="font-size: 10px;">诗和文学</a>
+						<a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a>
 					</div>
 				</section>
 				
@@ -152,7 +154,7 @@
 			  <h1 class="header-author">color_cat</h1>
 			</hgroup>
 			
-			<p class="header-subtitle">HuJian的个人博客</p>
+			<p class="header-subtitle">长夏</p>
 			
 			<nav class="header-menu">
 				<ul>
@@ -160,8 +162,6 @@
 					<li><a href="/">主页</a></li>
 		        
 					<li><a href="/archives">所有文章</a></li>
-		        
-					<li><a href="/tags/技术/">技术</a></li>
 		        
 					<li><a href="http://colorcat.esy.es/">demo</a></li>
 		        
@@ -176,6 +176,10 @@
 						<a class="github" target="_blank" href="https://github.com/HuJian21" title="github">github</a>
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/card1840" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/jian" title="zhihu">zhihu</a>
+			        
+						<a class="mail" target="_blank" href="mailto:support@dreamhufly@163.com" title="mail">mail</a>
 			        
 						<a class="facebook" target="_blank" href="https://www.facebook.com/hujian201" title="facebook">facebook</a>
 			        
@@ -206,7 +210,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/17/遇到safari兼容问题/">遇到safari兼容问题</a>
+      <a class="article-title" href="/2017/05/17/遇到safari兼容问题/">遇到safari兼容问题记录</a>
     </h1>
   
 
@@ -215,17 +219,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="遇到的safari兼容问题记录"><a href="#遇到的safari兼容问题记录" class="headerlink" title="遇到的safari兼容问题记录"></a>遇到的safari兼容问题记录</h1><p>目前遇到两个问题</p>
-<h1 id="日期格式化"><a href="#日期格式化" class="headerlink" title="日期格式化"></a>日期格式化</h1><p>error: invalid-date-in-safari</p>
+        <h1 id="1-日期格式化"><a href="#1-日期格式化" class="headerlink" title="1.日期格式化"></a>1.日期格式化</h1><p>error: invalid-date-in-safari</p>
 <p>描述: new Date(“2017-05-17”);</p>
-<p>解决方法: 使用正则表达式替换<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new Date(&apos;2017-05-17&apos;.replace(/-/g, &quot;/&quot;))</div></pre></td></tr></table></figure></p>
-<p>stack overflow: <a href="http://stackoverflow.com/questions/4310953/invalid-date-in-safari" target="_blank" rel="external">访问</a></p>
-<h1 id="input无法输入／选择"><a href="#input无法输入／选择" class="headerlink" title="input无法输入／选择"></a>input无法输入／选择</h1><p>error: 没有error</p>
-<p>描述: 在input元素上设置user-select: none造成无法正常输入、点击等</p>
-<p>解决方法：单独为safari设置该属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">-user-select: all;</div><div class="line">-webkit-user-select: all; /* Chrome/Safari */</div><div class="line">-webkit-user-select: text; /* Safari only */</div><div class="line">-moz-user-select: all; /* Firefox */</div><div class="line">-ms-user-select: all; /* IE10+ */</div></pre></td></tr></table></figure>
-<p>stack overflow: <a href="http://stackoverflow.com/questions/34372056/how-to-make-user-select-work-for-safari-browser" target="_blank" rel="external">访问</a></p>
-
+<p>解决方法: 使用正则表达式替换</p>
+<p><pre>new Date(‘2017-05-17’.replace(/-/g, “/“))</pre></p>
+<p>stack overflow: <a href="http://stackoverflow.com/questions/4310953/invalid-date-in-safari" target="_blank" rel="external">访问</a><br>
       
     </div>
     
@@ -239,76 +237,8 @@
       
 
       
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Vue2开发体验" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/01/02/Vue2开发体验/" class="article-date">
-  	<time datetime="2017-01-02T07:48:56.000Z" itemprop="datePublished">2017-01-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/02/Vue2开发体验/">Vue2开发体验</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用vue-cli搭建项目，集合了vue-router，vuex等，UI库使用了饿了么的Mint-UI，Vue一如既往的小巧灵敏易上手，我这个从Angular1过来的几乎是直接拿来写代码，学习成本很低，比我切到Angular2好像容易的多，再吐槽下Angular2，感觉学习曲线又上了一个台阶。。。(p.s.也可能是语法不熟悉的缘故)。vue的单文件组织我很喜欢，只是目前编辑器支持依然不够好，之前在知乎向vs code一位开发者反馈，之后版本更新高亮问题解决了，但格式化和代码提示依然是痛。。。</p>
-<p>我15年还是个naive的student时也差不多是这个月份，考驾照边等教练边用手机看vue1的语法，所以虽然之前没正式开发过Vue项目，但语法已经很熟悉了orz。。</p>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>安装vuc-cli</p>
-<pre><code>sudo npm install -g vue-cli</code></pre>
-
-<p>初始化项目</p>
-<pre><code>vue init webpack [my-project]</code></pre>
-
-<p>安装依赖</p>
-<pre><code>cd [my-project] && npm install</code></pre>
-
-<p>开发</p>
-<p><pre><code>npm run dev</code></pre><br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
-	</div>
-
-      
-
-      
         <p class="article-more-link">
-          <a  href="/2017/01/02/Vue2开发体验/#more">more >></a>
+          <a  href="/2017/05/17/遇到safari兼容问题/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -373,246 +303,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/12/03/在mac上安装mongoDB/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/09/24/hello-world/" class="article-date">
-  	<time datetime="2016-09-24T00:56:46.000Z" itemprop="datePublished">2016-09-24</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/24/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/09/24/hello-world/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-else" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/28/else/" class="article-date">
-  	<time datetime="2016-05-28T08:55:53.000Z" itemprop="datePublished">2016-05-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/28/else/">今天遇到的if和else问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>午睡了一会儿在一个QQ群里看到的，其实挺简单，只不过平常没怎么注意，今天就当复习了。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/28/else/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-JavaScript编码规范" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/06/JavaScript编码规范/" class="article-date">
-  	<time datetime="2016-05-06T03:49:14.000Z" itemprop="datePublished">2016-05-06</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/06/JavaScript编码规范/">JavaScript编码规范</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h3 style="color:black; font-weight:bold;"> 一、前言 </h3><br>JavaScript在百度一直有着广泛的应用，特别是在浏览器端的行为管理。本文档的目标是使JavaScript代码风格保持一致，容易被理解和被维护。虽然本文档是针对JavaScript设计的，但是在使用各种JavaScript的预编译语言时(如TypeScript等)时，适用的部分也应尽量遵循本文档的约定。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程规范/">编程规范</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/06/JavaScript编码规范/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-青龙湖的黄昏" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/05/青龙湖的黄昏/" class="article-date">
-  	<time datetime="2016-05-05T04:29:39.000Z" itemprop="datePublished">2016-05-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/05/青龙湖的黄昏/">青龙湖的黄昏</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><div align="center"><img src="/2016/05/05/青龙湖的黄昏/640.webp" alt="This is an example image" title="This is an example image"></div></p>
-<li align="center" style="color:#8E8E8E;">图说</li>
-
-<p>图为俄罗斯画家Mikhail G. Abakumov的作品。暮色撒开它深蓝色的披风，金色的风也停住了，连同我一起被困在黄昏的琥珀里。</p>
-<p align="center" style="color:#407600"><br>黄昏里<br>有被遗忘的温柔<br>和深藏的哀伤<br></p><br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/诗和文学/">诗和文学</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/05/青龙湖的黄昏/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
