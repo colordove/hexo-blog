@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="秋兰青青">
 <meta property="og:description" content="MongoDB简介MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。他的特点:高性能、易部署、易使用，存储数据非常方便。 在mac上安装MongoDB安装Homebrew（我电脑已经装了。。。） brew update  brew install mongodb">
 <meta property="og:image" content="http://hujian21.github.io/2016/12/03/在mac上安装mongoDB/Robomongo.png">
-<meta property="og:updated_time" content="2017-01-02T07:46:50.000Z">
+<meta property="og:updated_time" content="2017-05-17T10:00:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在mac上安装mongoDB">
 <meta name="twitter:description" content="MongoDB简介MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。他的特点:高性能、易部署、易使用，存储数据非常方便。 在mac上安装MongoDB安装Homebrew（我电脑已经装了。。。） brew update  brew install mongodb">
@@ -250,6 +250,33 @@
 <h1 id="安装Robomongo可视化管理工具"><a href="#安装Robomongo可视化管理工具" class="headerlink" title="安装Robomongo可视化管理工具"></a>安装Robomongo可视化管理工具</h1><p><a href="https://robomongo.org/download" target="_blank" rel="external">Robomongo下载地址</a></p>
 <p>下载完成后点击左上角create创建连接，使用默认配置项点击保存<br>选中刚刚建立的连接，点击立即连接即可连接到数据库。</p>
 <img src="/2016/12/03/在mac上安装mongoDB/Robomongo.png" alt="exex result" title="exex result">
+<p><div id="comment-container"></div></p>
+<p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var myTheme = {
+        render(state, instance) {
+          const container = document.createElement('div')
+          container.lang = "en-US"
+          container.className = 'gitment-container gitment-root-container'
+          container.appendChild(instance.renderHeader(state, instance))
+          container.appendChild(instance.renderEditor(state, instance))
+          container.appendChild(instance.renderComments(state, instance))
+          container.appendChild(instance.renderFooter(state, instance))
+          return container
+        },
+    }
+    var gitment = new Gitment({
+        owner: 'HuJian21',
+        repo: 'gitment',
+        oauth: {
+          client_id: '3befa479e4f679d95fd0',
+          client_secret: 'b644c0c9bc14519c70932a5a12d261afa93dc09b',
+        },
+        theme: myTheme
+    })
+    gitment.render('comment-container')
+</script>
 
       
     </div>
