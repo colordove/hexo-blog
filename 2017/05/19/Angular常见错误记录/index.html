@@ -4,17 +4,19 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>秋兰青青</title>
+  <title>Angular常见错误记录 | 秋兰青青</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Personal Site">
-<meta property="og:type" content="website">
-<meta property="og:title" content="秋兰青青">
-<meta property="og:url" content="http://HuJian21.github.io/index.html">
+  <meta name="description" content="Angular2+版本错误记录 1.不能在同一个元素上绑定多个指令Error：  Can&amp;#39;t have multiple template bindings on one element. Use only one attribute named &amp;#39;template&amp;#39; or prefixed with * 描述: 在同一个元素上绑定多个指令时报错 解决方案: &amp;lt;tem">
+<meta name="keywords" content="Angular,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular常见错误记录">
+<meta property="og:url" content="http://HuJian21.github.io/2017/05/19/Angular常见错误记录/index.html">
 <meta property="og:site_name" content="秋兰青青">
-<meta property="og:description" content="Personal Site">
+<meta property="og:description" content="Angular2+版本错误记录 1.不能在同一个元素上绑定多个指令Error：  Can&amp;#39;t have multiple template bindings on one element. Use only one attribute named &amp;#39;template&amp;#39; or prefixed with * 描述: 在同一个元素上绑定多个指令时报错 解决方案: &amp;lt;tem">
+<meta property="og:updated_time" content="2017-05-19T06:43:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="秋兰青青">
-<meta name="twitter:description" content="Personal Site">
+<meta name="twitter:title" content="Angular常见错误记录">
+<meta name="twitter:description" content="Angular2+版本错误记录 1.不能在同一个元素上绑定多个指令Error：  Can&amp;#39;t have multiple template bindings on one element. Use only one attribute named &amp;#39;template&amp;#39; or prefixed with * 描述: 在同一个元素上绑定多个指令时报错 解决方案: &amp;lt;tem">
   
     <link rel="alternative" href="/atom.xml" title="秋兰青青" type="application/atom+xml">
   
@@ -191,9 +193,7 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-Angular常见错误记录" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Angular常见错误记录" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2017/05/19/Angular常见错误记录/" class="article-date">
@@ -209,12 +209,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/19/Angular常见错误记录/">Angular常见错误记录</a>
+    <h1 class="article-title" itemprop="name">
+      Angular常见错误记录
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -229,86 +240,40 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/05/17/遇到safari兼容问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">遇到safari兼容问题记录</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
 
-
-
-
-
-
-
-
-  
-    <article id="post-遇到safari兼容问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/05/17/遇到safari兼容问题/" class="article-date">
-  	<time datetime="2017-05-17T06:59:59.000Z" itemprop="datePublished">2017-05-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/17/遇到safari兼容问题/">遇到safari兼容问题记录</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-日期格式化"><a href="#1-日期格式化" class="headerlink" title="1.日期格式化"></a>1.日期格式化</h1><p>error: invalid-date-in-safari</p>
-<p>描述: new Date(“2017-05-17”);</p>
-<p>解决方法: 使用正则表达式替换</p>
-<p><pre>new Date(‘2017-05-17’.replace(/-/g, “/“))</pre></p>
-<p>stack overflow: <a href="http://stackoverflow.com/questions/4310953/invalid-date-in-safari" target="_blank" rel="external">访问</a><br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/05/17/遇到safari兼容问题/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
@@ -317,136 +282,6 @@
 
 
 
-
-  
-    <article id="post-在mac上安装mongoDB" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/12/03/在mac上安装mongoDB/" class="article-date">
-  	<time datetime="2016-12-02T19:41:38.000Z" itemprop="datePublished">2016-12-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/03/在mac上安装mongoDB/">在mac上安装mongoDB</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="MongoDB简介"><a href="#MongoDB简介" class="headerlink" title="MongoDB简介"></a>MongoDB简介</h1><p>MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。<br>他的特点:高性能、易部署、易使用，存储数据非常方便。</p>
-<h1 id="在mac上安装MongoDB"><a href="#在mac上安装MongoDB" class="headerlink" title="在mac上安装MongoDB"></a>在mac上安装MongoDB</h1><p>安装Homebrew（我电脑已经装了。。。）</p>
-<pre><code>brew update</code></pre>
-
-<pre><code>brew install mongodb</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/12/03/在mac上安装mongoDB/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-My-New-Post" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/04/My-New-Post/" class="article-date">
-  	<time datetime="2016-05-04T13:30:06.000Z" itemprop="datePublished">2016-05-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/04/My-New-Post/">测试</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="这是一条测试信息"><a href="#这是一条测试信息" class="headerlink" title="这是一条测试信息"></a>这是一条测试信息</h2><p><img src="/images/test.jpg" alt=""><br>你也可以问，为什么生命是碳基的，因为碳原子的化学性质决定的，碳原子非常容易和其他原子结合，所以容易组成复杂的分子结构。简单说，生物的存在是建立在物理定律的基础上，包括为什么生物为什么是现在的体积，背后都有物理定律的制约。 </p>
-<p>我们在假设宇宙的物理定律在任何地方是一致的前提下，其他星球上最有可能产生的也是碳基的生物，就像前面说的，这是碳原子的性质决定的。至于其他的生命形式目前还没有发现，也没有从科学上证明可行，不过现在机器学习也显示出一些生命的特性，但机器学习这种复杂的模式仍然需要生物智能先制造计算机才行。 </p>
-<p>最后再推荐一个纪录片，BBC的 生命的奇迹 (豆瓣)，从物理学的角度阐释了生命的存在合理性以及限制。 </p>
-<h2 id=""><a href="#" class="headerlink" title=""></a>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试/">测试</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/04/My-New-Post/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -470,8 +305,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
