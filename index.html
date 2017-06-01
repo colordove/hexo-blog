@@ -117,7 +117,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a>
+						<a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a>
 					</div>
 				</section>
 				
@@ -193,6 +193,79 @@
 
       <div class="body-wrap">
   
+    <article id="post-几段常用的jQuery代码" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/01/几段常用的jQuery代码/" class="article-date">
+  	<time datetime="2017-06-01T02:00:46.000Z" itemprop="datePublished">2017-06-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/01/几段常用的jQuery代码/">几段常用的jQuery代码</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.42du.cn/p/20" target="_blank" rel="external">访问来源</a></p>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>简单列举了几段JQuery表单处理的代码片段，包括只能输入数字的文本域、checkbox全选、checkbox反选、输入字符数量提示、Email验证、避免重复提交等。</p>
+<h3 id="1-只接受数字输入"><a href="#1-只接受数字输入" class="headerlink" title="1.只接受数字输入"></a>1.只接受数字输入</h3><pre><code>$(&quot;#uAge&quot;).keydown(function(event) {
+    // 允许退格和删除键
+    if ( event.keyCode == 46 || event.keyCode == 8 ) {
+    }
+    else {
+        // 保证输入的是数字键
+        if (event.keyCode &lt; 48 || event.keyCode &gt; 57 ) {
+            event.preventDefault();
+        }
+    }
+});
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载/">转载</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/06/01/几段常用的jQuery代码/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Angular常见错误记录" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -223,9 +296,8 @@
 <h2 id="1-不能在同一个元素上绑定多个指令"><a href="#1-不能在同一个元素上绑定多个指令" class="headerlink" title="1.不能在同一个元素上绑定多个指令"></a>1.不能在同一个元素上绑定多个指令</h2><p>Error：  <code>Can&#39;t have multiple template bindings on one element. Use only one attribute named &#39;template&#39; or prefixed with *</code></p>
 <p>描述: 在同一个元素上绑定多个指令时报错</p>
 <p>解决方案:</p>
-<p><pre><code><br>&lt;template <em>ngFor=”let item of items”<br>    &lt;a </em>ngIf=”item === 1”&gt;item&lt;/a&gt;<br>&lt;template&gt;<br></code></pre></p>
-<p>stack overflow： <a href="http://stackoverflow.com/questions/39412085/multiple-template-bindings-on-angular2-element" target="_blank" rel="external">访问</a></p>
-
+<p><pre><code>&lt;template <em>ngFor=”let item of items”<br>    &lt;a </em>ngIf=”item === 1”&gt;item&lt;/a&gt;<br>&lt;template&gt;<br></code></pre></p>
+<p>Stack overflow： <a href="http://stackoverflow.com/questions/39412085/multiple-template-bindings-on-angular2-element" target="_blank" rel="external">访问</a></p>
       
     </div>
     
@@ -238,6 +310,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2017/05/19/Angular常见错误记录/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
