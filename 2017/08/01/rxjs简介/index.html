@@ -17,8 +17,6 @@
 <meta name="twitter:title" content="RxJS简介">
 <meta name="twitter:description" content="摘要RxJS是ReactiveX的JavaScript实现，除此之外还有RxJava、Rx.Net、RxSwift等，ReactiveX提供了一系列的数据流组合和控制能力。RxJS被广泛的运用在Angular中，本文做一些简单的资料搬运和介绍。 核心概念Reactive Programming: 一种面向数据流(Data Flows)和变化传播(the Propagation of Change)">
   
-    <link rel="alternate" href="/atom.xml" title="秋兰青青" type="application/atom+xml">
-  
   
     <link rel="icon" href="/favicon.png">
   
@@ -40,9 +38,7 @@
     <div id="header-inner" class="inner">
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://HuJian21.github.io"></form>
@@ -55,6 +51,8 @@
           <a class="main-nav-link" href="/archives">归档</a>
         
           <a class="main-nav-link" href="/about">关于</a>
+        
+          <a class="main-nav-link" href="/resume">Resume</a>
         
       </nav>
       
@@ -133,10 +131,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://HuJian21.github.io/2017/08/01/rxjs简介/" data-id="cj5tatjcr00041mq101smgq4x" class="article-share-link">分享</a>
+      <a data-url="http://HuJian21.github.io/2017/08/01/rxjs简介/" data-id="cj5tn315700047jq1j0sonbau" class="article-share-link">Share</a>
       
       
-        <a href="http://HuJian21.github.io/2017/08/01/rxjs简介/#disqus_thread" class="article-comment-link">留言</a>
+        <a href="http://HuJian21.github.io/2017/08/01/rxjs简介/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RxJS/">RxJS</a></li></ul>
@@ -149,7 +147,7 @@
   
   
     <a href="/2017/07/24/对称／非对称加密与HTTPS/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">对称／非对称加密与HTTPS</div>
     </a>
   
@@ -188,7 +186,7 @@
     
       <div class="widget" id="toc-widget-fixed">
       
-        <strong class="toc-title">文章目录</strong>
+        <strong class="toc-title">Content</strong>
         <div class="toc-widget-list">
               <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#核心概念"><span class="toc-number">2.</span> <span class="toc-text">核心概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#面向变化传播的示例与解释："><span class="toc-number">2.1.</span> <span class="toc-text">面向变化传播的示例与解释：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向数据流的示例与解释："><span class="toc-number">2.2.</span> <span class="toc-text">面向数据流的示例与解释：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Observable"><span class="toc-number">2.3.</span> <span class="toc-text">Observable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Operator"><span class="toc-number">2.4.</span> <span class="toc-text">Operator</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Observer"><span class="toc-number">2.5.</span> <span class="toc-text">Observer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Subscription"><span class="toc-number">2.6.</span> <span class="toc-text">Subscription</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Subject"><span class="toc-number">2.7.</span> <span class="toc-text">Subject</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#作为被观察者多次被订阅"><span class="toc-number">2.7.1.</span> <span class="toc-text">作为被观察者多次被订阅</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作为观察者成为subscribe的参数"><span class="toc-number">2.7.2.</span> <span class="toc-text">作为观察者成为subscribe的参数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scheduler"><span class="toc-number">2.8.</span> <span class="toc-text">Scheduler</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Observable的“冷”与“热”"><span class="toc-number">3.</span> <span class="toc-text">Observable的“冷”与“热”</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Connectable模式"><span class="toc-number">3.1.</span> <span class="toc-text">Connectable模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在异步处理中对比Promise"><span class="toc-number">4.</span> <span class="toc-text">在异步处理中对比Promise</span></a></li></ol>
           </div>
@@ -220,10 +218,10 @@
   <div class="outer">
     <div id="footer-left">
       &copy; 2014 - 2017 color_cat&nbsp;|&nbsp;
-      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+      Theme by <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
     </div>
      <div id="footer-right">
-      联系方式&nbsp;|&nbsp;hujian201@gmail.com
+      Contact&nbsp;|&nbsp;hujian201@gmail.com
     </div>
   </div>
 </footer>
@@ -236,6 +234,8 @@
     <a href="/archives" class="mobile-nav-link">归档</a>
   
     <a href="/about" class="mobile-nav-link">关于</a>
+  
+    <a href="/resume" class="mobile-nav-link">Resume</a>
   
 </nav>
     <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
