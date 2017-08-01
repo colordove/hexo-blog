@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://HuJian21.github.io/2017/08/01/rxjs简介/index.html">
 <meta property="og:site_name" content="秋兰青青">
 <meta property="og:description" content="摘要RxJS是ReactiveX的JavaScript实现，除此之外还有RxJava、Rx.Net、RxSwift等，ReactiveX提供了一系列的数据流组合和控制能力。RxJS被广泛的运用在Angular中，本文做一些简单的资料搬运和介绍。 核心概念Reactive Programming: 一种面向数据流(Data Flows)和变化传播(the Propagation of Change)">
-<meta property="og:updated_time" content="2017-08-01T07:50:20.000Z">
+<meta property="og:updated_time" content="2017-08-01T07:52:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RxJS简介">
 <meta name="twitter:description" content="摘要RxJS是ReactiveX的JavaScript实现，除此之外还有RxJava、Rx.Net、RxSwift等，ReactiveX提供了一系列的数据流组合和控制能力。RxJS被广泛的运用在Angular中，本文做一些简单的资料搬运和介绍。 核心概念Reactive Programming: 一种面向数据流(Data Flows)和变化传播(the Propagation of Change)">
@@ -42,7 +42,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://HuJian21.github.io"></form>
@@ -97,6 +97,7 @@
 <h3 id="面向变化传播的示例与解释："><a href="#面向变化传播的示例与解释：" class="headerlink" title="面向变化传播的示例与解释："></a>面向变化传播的示例与解释：</h3><p>对下面语句</p>
 <p><pre><code>a = b + c</code></pre><br>Imperative Programming:  一个赋值过程，赋值完成即结束，a和b、c的变化再没有关联。<br>Reactive Programming:  当b或者c发生变化时，a也会跟着发生变化。</p>
 <p>在我们熟悉的MVVM中，也存在Model =&gt; View， View =&gt; Model这样的变化关系，当View有数据绑定时，View Model会更新Model，当Model变化时，Model会通知View Model、View Model进而通知View更新。前端的MVVM框架也体现了面向变化传播的思想。</p>
+<a id="more"></a>
 <h3 id="面向数据流的示例与解释："><a href="#面向数据流的示例与解释：" class="headerlink" title="面向数据流的示例与解释："></a>面向数据流的示例与解释：</h3><p>监听一系列的事件流，比如用户触发的事件、网络请求的响应、定时器、MutationObserver等等等等，我们通过RxJs的一系列方法将这一系列事件流转化为数据流，对数据流进行进行过滤、合并等各种你需要的操作后响应事件流的回调，这个过程就属于面向数据流的编程。</p>
 <h3 id="Observable"><a href="#Observable" class="headerlink" title="Observable"></a>Observable</h3><p>Observable将异步数据转化为数据流，转化后的Observable对象相当于数据源，我们后面的操作都在Observable对象的基础上进行，Observable是观察者模型中的被观察者。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'#js-button'</span>);</div><div class="line"><span class="keyword">const</span> buttonClick$ = Rx.Observable.fromEvent(button, <span class="string">'click'</span>);</div><div class="line">buttonClick$.subscribe(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'clicked'</span>));</div></pre></td></tr></table></figure></p>
 <h3 id="Operator"><a href="#Operator" class="headerlink" title="Operator"></a>Operator</h3><p>Observable对象的操作者，可以对Observable对象进行过滤、合并、转化等操作，大多数operator会在操作完成后返回一个新的Observable对象供下一个operator进行处理，方便的进行链式调用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> myObservable = observable$.debounceTime(<span class="number">500</span>).first()</div></pre></td></tr></table></figure></p>
@@ -124,10 +125,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://HuJian21.github.io/2017/08/01/rxjs简介/" data-id="cj5tabm2c0002qvq13dazzpc7" class="article-share-link">分享</a>
+      <a data-url="http://HuJian21.github.io/2017/08/01/rxjs简介/" data-id="cj5tad0ut0004shq1lmbo19wv" class="article-share-link">Delen</a>
       
       
-        <a href="http://HuJian21.github.io/2017/08/01/rxjs简介/#disqus_thread" class="article-comment-link">留言</a>
+        <a href="http://HuJian21.github.io/2017/08/01/rxjs简介/#disqus_thread" class="article-comment-link">Commentaren</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RxJS/">RxJS</a></li></ul>
@@ -140,7 +141,7 @@
   
   
     <a href="/2017/07/24/对称／非对称加密与HTTPS/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
+      <strong class="article-nav-caption">Ouder</strong>
       <div class="article-nav-title">对称／非对称加密与HTTPS</div>
     </a>
   
@@ -179,7 +180,7 @@
     
       <div class="widget" id="toc-widget-fixed">
       
-        <strong class="toc-title">文章目录</strong>
+        <strong class="toc-title">Content</strong>
         <div class="toc-widget-list">
               <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#核心概念"><span class="toc-number">2.</span> <span class="toc-text">核心概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#面向变化传播的示例与解释："><span class="toc-number">2.1.</span> <span class="toc-text">面向变化传播的示例与解释：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向数据流的示例与解释："><span class="toc-number">2.2.</span> <span class="toc-text">面向数据流的示例与解释：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Observable"><span class="toc-number">2.3.</span> <span class="toc-text">Observable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Operator"><span class="toc-number">2.4.</span> <span class="toc-text">Operator</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Observer"><span class="toc-number">2.5.</span> <span class="toc-text">Observer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Subscription"><span class="toc-number">2.6.</span> <span class="toc-text">Subscription</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Subject"><span class="toc-number">2.7.</span> <span class="toc-text">Subject</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#作为被观察者多次被订阅"><span class="toc-number">2.7.1.</span> <span class="toc-text">作为被观察者多次被订阅</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作为观察者成为subscribe的参数"><span class="toc-number">2.7.2.</span> <span class="toc-text">作为观察者成为subscribe的参数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scheduler"><span class="toc-number">2.8.</span> <span class="toc-text">Scheduler</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在异步处理中对比Promise"><span class="toc-number">3.</span> <span class="toc-text">在异步处理中对比Promise</span></a></li></ol>
           </div>
@@ -211,10 +212,10 @@
   <div class="outer">
     <div id="footer-left">
       &copy; 2014 - 2017 color_cat&nbsp;|&nbsp;
-      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+      Theme by <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
     </div>
      <div id="footer-right">
-      联系方式&nbsp;|&nbsp;hujian201@gmail.com
+      Contact&nbsp;|&nbsp;hujian201@gmail.com
     </div>
   </div>
 </footer>

@@ -40,7 +40,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://HuJian21.github.io"></form>
@@ -90,44 +90,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!-- Table of Contents -->
-        
         <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>RxJS是<a href="http://reactivex.io/" target="_blank" rel="external">ReactiveX</a>的JavaScript实现，除此之外还有RxJava、Rx.Net、RxSwift等，ReactiveX提供了一系列的数据流组合和控制能力。RxJS被广泛的运用在Angular中，本文做一些简单的资料搬运和介绍。</p>
 <h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><p><a href="https://en.wikipedia.org/wiki/Reactive_programming" target="_blank" rel="external">Reactive Programming</a>: 一种面向数据流(Data Flows)和变化传播(the Propagation of Change)的编程范式。<br><a href="http://reactivex.io/" target="_blank" rel="external">ReactiveX(Reactive Extensions)</a>: 简写Rx,由微软开发维护的基于Reactive Programming实现的一个工具库集合，Rx系列集合了观察者模式、迭代器模式和函数式编程，是响应式编程的优秀实践。</p>
 <h3 id="面向变化传播的示例与解释："><a href="#面向变化传播的示例与解释：" class="headerlink" title="面向变化传播的示例与解释："></a>面向变化传播的示例与解释：</h3><p>对下面语句</p>
 <p><pre><code>a = b + c</code></pre><br>Imperative Programming:  一个赋值过程，赋值完成即结束，a和b、c的变化再没有关联。<br>Reactive Programming:  当b或者c发生变化时，a也会跟着发生变化。</p>
 <p>在我们熟悉的MVVM中，也存在Model =&gt; View， View =&gt; Model这样的变化关系，当View有数据绑定时，View Model会更新Model，当Model变化时，Model会通知View Model、View Model进而通知View更新。前端的MVVM框架也体现了面向变化传播的思想。</p>
-<h3 id="面向数据流的示例与解释："><a href="#面向数据流的示例与解释：" class="headerlink" title="面向数据流的示例与解释："></a>面向数据流的示例与解释：</h3><p>监听一系列的事件流，比如用户触发的事件、网络请求的响应、定时器、MutationObserver等等等等，我们通过RxJs的一系列方法将这一系列事件流转化为数据流，对数据流进行进行过滤、合并等各种你需要的操作后响应事件流的回调，这个过程就属于面向数据流的编程。</p>
-<h3 id="Observable"><a href="#Observable" class="headerlink" title="Observable"></a>Observable</h3><p>Observable将异步数据转化为数据流，转化后的Observable对象相当于数据源，我们后面的操作都在Observable对象的基础上进行，Observable是观察者模型中的被观察者。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'#js-button'</span>);</div><div class="line"><span class="keyword">const</span> buttonClick$ = Rx.Observable.fromEvent(button, <span class="string">'click'</span>);</div><div class="line">buttonClick$.subscribe(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'clicked'</span>));</div></pre></td></tr></table></figure></p>
-<h3 id="Operator"><a href="#Operator" class="headerlink" title="Operator"></a>Operator</h3><p>Observable对象的操作者，可以对Observable对象进行过滤、合并、转化等操作，大多数operator会在操作完成后返回一个新的Observable对象供下一个operator进行处理，方便的进行链式调用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> myObservable = observable$.debounceTime(<span class="number">500</span>).first()</div></pre></td></tr></table></figure></p>
-<h3 id="Observer"><a href="#Observer" class="headerlink" title="Observer"></a>Observer</h3><p>观察者模型中的观察者,当Observable被subscribe函数订阅时，subscribe期待一个observer来进行响应。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">observable$.subscribe(observer)</div></pre></td></tr></table></figure></p>
-<h3 id="Subscription"><a href="#Subscription" class="headerlink" title="Subscription"></a>Subscription</h3><p>Observable被subscribe函数订阅时后返回的Subscription实例, 订阅对象有一个重要的方法:unsubscribe,用来释放资源或者取消Overvable对象的执行。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> observable$ = Rx.Observable.interval(<span class="number">1000</span>);</div><div class="line"><span class="keyword">const</span> subscription = observable$.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x));</div><div class="line">subscription.unsubscribe();</div></pre></td></tr></table></figure><br>可以对单个订阅对象unsubscribe, 也可以对多个订阅对象unsubscribe，方法是将一个订阅对象add到另一个订阅中(remove方法从订阅对象中移出add进的订阅对象)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> observable1$ = Rx.Observable.interval(<span class="number">200</span>);</div><div class="line"><span class="keyword">const</span> observable2$ = Rx.Observable.interval(<span class="number">300</span>);</div><div class="line"><span class="keyword">const</span> subscription1 = observable1$.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observable1:<span class="subst">$&#123;x&#125;</span>`</span>));</div><div class="line"><span class="keyword">const</span> subscription2 = observable2$.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observable2:<span class="subst">$&#123;x&#125;</span>`</span>));</div><div class="line">subscription1.add(subscription2);</div><div class="line"><span class="comment">// 取消全部订阅</span></div><div class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    subscription1.unsubscribe();</div><div class="line">&#125;, <span class="number">1000</span>);</div></pre></td></tr></table></figure>
-<h3 id="Subject"><a href="#Subject" class="headerlink" title="Subject"></a>Subject</h3><p>Subject是一种特殊的Observable，它允许值被多个观察者执行,类似于EventEmitter的数据结构。它既是被观察者也是观察者。</p>
-<h4 id="作为被观察者多次被订阅"><a href="#作为被观察者多次被订阅" class="headerlink" title="作为被观察者多次被订阅"></a>作为被观察者多次被订阅</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> subject = <span class="keyword">new</span> Rx.Subject();</div><div class="line">subject.subscribe(&#123;</div><div class="line">    <span class="attr">next</span>: <span class="function">(<span class="params">value</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerA:<span class="subst">$&#123;value&#125;</span>`</span>);</div><div class="line">&#125;);</div><div class="line">subject.subscribe(&#123;</div><div class="line">    <span class="attr">next</span>: <span class="function">(<span class="params">value</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerB:<span class="subst">$&#123;value&#125;</span>`</span>);</div><div class="line">&#125;);</div><div class="line">subject.next(<span class="number">1</span>);</div><div class="line">subject.next(<span class="number">2</span>);</div><div class="line"></div><div class="line"><span class="comment">// 打印结果</span></div><div class="line"><span class="comment">// observerA: 1</span></div><div class="line"><span class="comment">// observerB: 1</span></div><div class="line"><span class="comment">// observerA: 2</span></div><div class="line"><span class="comment">// observerB: 2</span></div></pre></td></tr></table></figure>
-<h4 id="作为观察者成为subscribe的参数"><a href="#作为观察者成为subscribe的参数" class="headerlink" title="作为观察者成为subscribe的参数"></a>作为观察者成为subscribe的参数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> subject = <span class="keyword">new</span> Rx.Subject();</div><div class="line">subject.subscribe(&#123;</div><div class="line">    <span class="attr">next</span>: <span class="function">(<span class="params">value</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerA:<span class="subst">$&#123;value&#125;</span>`</span>);</div><div class="line">&#125;);</div><div class="line">subject.subscribe(&#123;</div><div class="line">    <span class="attr">next</span>: <span class="function">(<span class="params">value</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`observerB:<span class="subst">$&#123;value&#125;</span>`</span>);</div><div class="line">&#125;);</div><div class="line"><span class="keyword">const</span> observable$ = Rx.Observable.from([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</div><div class="line"><span class="comment">// subject作为观察者</span></div><div class="line">observable$.subscribe(subject);</div><div class="line"></div><div class="line"><span class="comment">// 打印结果</span></div><div class="line"><span class="comment">// observerA: 1</span></div><div class="line"><span class="comment">// observerB: 1</span></div><div class="line"><span class="comment">// observerA: 2</span></div><div class="line"><span class="comment">// observerB: 2</span></div><div class="line"><span class="comment">// observerA: 3</span></div><div class="line"><span class="comment">// observerB: 3</span></div></pre></td></tr></table></figure>
-<h3 id="Scheduler"><a href="#Scheduler" class="headerlink" title="Scheduler"></a>Scheduler</h3><p>调度者，控制着何时启动一个订阅和何时通知被发送。<br><strong>Scheduler有三个组件构成：</strong></p>
-<ul>
-<li>一个调度者是一个数据结构。它知道如何根据优先级或其他标准存储和排列任务。</li>
-<li>一个调度者是一个执行上下文。它表示何处何时任务被执行(例如: immediately(立即), or in another callback mechanism(回调机制), such as setTimeout(定时器) or process.nextTick(在下一个事件轮询节点执行), or the animation frame(动画))。</li>
-<li>一个调度者具有虚拟的时钟。它通过调度器上的getter方法now()提供了“时间”的概念。 在特定调度程序上调度的任务将仅仅遵守由该时钟表示的时间。</li>
-</ul>
-<p><strong>这是一个使用observeOn操作符传递这些值的异步调度程序</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> observable$ = Rx.Observable.create(<span class="function"><span class="keyword">function</span> (<span class="params">observer</span>) </span>&#123;</div><div class="line">    observer.next(<span class="number">1</span>);</div><div class="line">    observer.next(<span class="number">2</span>);</div><div class="line">    observer.next(<span class="number">3</span>);</div><div class="line">    observer.complete();</div><div class="line">&#125;)</div><div class="line">.observeOn(Rx.Scheduler.async);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'just before subscribe'</span>);</div><div class="line">    observable$.subscribe(&#123;</div><div class="line">    <span class="attr">next</span>: <span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'got value '</span> + x),</div><div class="line">    <span class="attr">error</span>: <span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.error(<span class="string">'something wrong occurred: '</span> + err),</div><div class="line">    <span class="attr">complete</span>: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'done'</span>)</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'just after subscribe'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 打印结果</span></div><div class="line"><span class="comment">// just before subscribe</span></div><div class="line"><span class="comment">// just after subscribe</span></div><div class="line"><span class="comment">// got value 1</span></div><div class="line"><span class="comment">// got value 2</span></div><div class="line"><span class="comment">// got value 3</span></div><div class="line"><span class="comment">// done</span></div></pre></td></tr></table></figure></p>
-<h2 id="在异步处理中对比Promise"><a href="#在异步处理中对比Promise" class="headerlink" title="在异步处理中对比Promise"></a>在异步处理中对比Promise</h2><p><a href="https://github.com/then/promise" target="_blank" rel="external">Promise</a>是目前我们最常用的异步解决方案,它是一种对异步操作的封装，一个好吃的语法糖，它定义了三个状态，pedding、fulfilled和rejected。它和RxJS的不同之处：</p>
-<ol>
-<li>Promise从pedding状态变为其它状态时是不可撤销的，而RxJS可以取消订阅。</li>
-<li>Observable可以持续emit多个值，而Promise只能emit一个值。</li>
-<li>Observable提供了许多的工具函数。</li>
-</ol>
-<p>总结: RxJs是Promise进阶版，提供了更多的功能和更精细的控制。</p>
-
+        
+          <p class="article-more-link">
+            <a href="/2017/08/01/rxjs简介/#more">阅读全文 »</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://HuJian21.github.io/2017/08/01/rxjs简介/" data-id="cj5tabm2c0002qvq13dazzpc7" class="article-share-link">分享</a>
+      <a data-url="http://HuJian21.github.io/2017/08/01/rxjs简介/" data-id="cj5tad0ut0004shq1lmbo19wv" class="article-share-link">Delen</a>
       
       
-        <a href="http://HuJian21.github.io/2017/08/01/rxjs简介/#disqus_thread" class="article-comment-link">留言</a>
+        <a href="http://HuJian21.github.io/2017/08/01/rxjs简介/#disqus_thread" class="article-comment-link">Commentaren</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RxJS/">RxJS</a></li></ul>
@@ -168,10 +147,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://HuJian21.github.io/2017/07/24/对称／非对称加密与HTTPS/" data-id="cj5tabm2s0009qvq162pt8aqn" class="article-share-link">分享</a>
+      <a data-url="http://HuJian21.github.io/2017/07/24/对称／非对称加密与HTTPS/" data-id="cj5tad0v7000bshq1xs6m02xe" class="article-share-link">Delen</a>
       
       
-        <a href="http://HuJian21.github.io/2017/07/24/对称／非对称加密与HTTPS/#disqus_thread" class="article-comment-link">留言</a>
+        <a href="http://HuJian21.github.io/2017/07/24/对称／非对称加密与HTTPS/#disqus_thread" class="article-comment-link">Commentaren</a>
       
       
     </footer>
@@ -215,10 +194,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://HuJian21.github.io/2017/06/14/在mac上使用自带的Apache服务器/" data-id="cj5tabm2p0006qvq1kyg9xdhx" class="article-share-link">分享</a>
+      <a data-url="http://HuJian21.github.io/2017/06/14/在mac上使用自带的Apache服务器/" data-id="cj5tad0v20006shq1pm48l41b" class="article-share-link">Delen</a>
       
       
-        <a href="http://HuJian21.github.io/2017/06/14/在mac上使用自带的Apache服务器/#disqus_thread" class="article-comment-link">留言</a>
+        <a href="http://HuJian21.github.io/2017/06/14/在mac上使用自带的Apache服务器/#disqus_thread" class="article-comment-link">Commentaren</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
@@ -264,10 +243,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://HuJian21.github.io/2017/06/01/几段常用的jQuery代码/" data-id="cj5tabm2n0005qvq1lk7g7g08" class="article-share-link">分享</a>
+      <a data-url="http://HuJian21.github.io/2017/06/01/几段常用的jQuery代码/" data-id="cj5tad0uz0005shq1bj3xljrb" class="article-share-link">Delen</a>
       
       
-        <a href="http://HuJian21.github.io/2017/06/01/几段常用的jQuery代码/#disqus_thread" class="article-comment-link">留言</a>
+        <a href="http://HuJian21.github.io/2017/06/01/几段常用的jQuery代码/#disqus_thread" class="article-comment-link">Commentaren</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载/">转载</a></li></ul>
@@ -316,10 +295,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://HuJian21.github.io/2017/05/19/Angular常见错误记录/" data-id="cj5tabm220000qvq1gout294b" class="article-share-link">分享</a>
+      <a data-url="http://HuJian21.github.io/2017/05/19/Angular常见错误记录/" data-id="cj5tad0ub0000shq1ebgazih0" class="article-share-link">Delen</a>
       
       
-        <a href="http://HuJian21.github.io/2017/05/19/Angular常见错误记录/#disqus_thread" class="article-comment-link">留言</a>
+        <a href="http://HuJian21.github.io/2017/05/19/Angular常见错误记录/#disqus_thread" class="article-comment-link">Commentaren</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -367,10 +346,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://HuJian21.github.io/2017/05/17/遇到safari兼容问题/" data-id="cj5tabm2v000bqvq12c1lixo2" class="article-share-link">分享</a>
+      <a data-url="http://HuJian21.github.io/2017/05/17/遇到safari兼容问题/" data-id="cj5tad0v50009shq16uhixxl9" class="article-share-link">Delen</a>
       
       
-        <a href="http://HuJian21.github.io/2017/05/17/遇到safari兼容问题/#disqus_thread" class="article-comment-link">留言</a>
+        <a href="http://HuJian21.github.io/2017/05/17/遇到safari兼容问题/#disqus_thread" class="article-comment-link">Commentaren</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
@@ -418,10 +397,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://HuJian21.github.io/2016/12/03/在mac上安装mongoDB/" data-id="cj5tabm2q0008qvq11h42pyw9" class="article-share-link">分享</a>
+      <a data-url="http://HuJian21.github.io/2016/12/03/在mac上安装mongoDB/" data-id="cj5tad0v30008shq16k30cl35" class="article-share-link">Delen</a>
       
       
-        <a href="http://HuJian21.github.io/2016/12/03/在mac上安装mongoDB/#disqus_thread" class="article-comment-link">留言</a>
+        <a href="http://HuJian21.github.io/2016/12/03/在mac上安装mongoDB/#disqus_thread" class="article-comment-link">Commentaren</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -468,10 +447,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://HuJian21.github.io/2016/05/04/My-New-Post/" data-id="cj5tabm2h0004qvq1v59iweld" class="article-share-link">分享</a>
+      <a data-url="http://HuJian21.github.io/2016/05/04/My-New-Post/" data-id="cj5tad0um0002shq1csm9v2xo" class="article-share-link">Delen</a>
       
       
-        <a href="http://HuJian21.github.io/2016/05/04/My-New-Post/#disqus_thread" class="article-comment-link">留言</a>
+        <a href="http://HuJian21.github.io/2016/05/04/My-New-Post/#disqus_thread" class="article-comment-link">Commentaren</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试/">测试</a></li></ul>
@@ -519,7 +498,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title tagcloud">标签云</h3>
+    <h3 class="widget-title tagcloud">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/Angular/" style="font-size: 14px;">Angular</a> <a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 25px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/RxJS/" style="font-size: 14px;">RxJS</a> <a href="/tags/jQuery/" style="font-size: 14px;">jQuery</a> <a href="/tags/mac/" style="font-size: 14px;">mac</a> <a href="/tags/技术/" style="font-size: 14px;">技术</a> <a href="/tags/数据库/" style="font-size: 14px;">数据库</a> <a href="/tags/测试/" style="font-size: 14px;">测试</a> <a href="/tags/转载/" style="font-size: 14px;">转载</a>
     </div>
@@ -528,7 +507,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title recent-posts">最新文章</h3>
+    <h3 class="widget-title recent-posts">Recente berichten</h3>
     <div class="widget">
       <ul>
         
@@ -559,7 +538,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title archive">归档</h3>
+    <h3 class="widget-title archive">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li></ul>
     </div>
@@ -588,10 +567,10 @@
   <div class="outer">
     <div id="footer-left">
       &copy; 2014 - 2017 color_cat&nbsp;|&nbsp;
-      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+      Theme by <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
     </div>
      <div id="footer-right">
-      联系方式&nbsp;|&nbsp;hujian201@gmail.com
+      Contact&nbsp;|&nbsp;hujian201@gmail.com
     </div>
   </div>
 </footer>
