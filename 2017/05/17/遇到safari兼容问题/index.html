@@ -12,6 +12,7 @@
 <meta property="og:url" content="http://HuJian21.github.io/2017/05/17/遇到safari兼容问题/index.html">
 <meta property="og:site_name" content="秋兰青青">
 <meta property="og:description" content="1.日期格式化error: invalid-date-in-safari 描述: new Date(“2017-05-17”); 解决方法: 使用正则表达式替换 new Date(‘2017-05-17’.replace(/-/g, “/“)) stack overflow: 访问">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-06-01T07:43:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="遇到safari兼容问题记录">
@@ -38,7 +39,7 @@
     <div id="header-inner" class="inner">
       <nav id="sub-nav">
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://HuJian21.github.io"></form>
@@ -51,8 +52,6 @@
           <a class="main-nav-link" href="/archives">归档</a>
         
           <a class="main-nav-link" href="/about">关于</a>
-        
-          <a class="main-nav-link" href="/resume">Resume</a>
         
       </nav>
       
@@ -94,20 +93,20 @@
 <p>描述: new Date(“2017-05-17”);</p>
 <p>解决方法: 使用正则表达式替换</p>
 <p><pre>new Date(‘2017-05-17’.replace(/-/g, “/“))</pre></p>
-<p>stack overflow: <a href="http://stackoverflow.com/questions/4310953/invalid-date-in-safari" target="_blank" rel="external">访问</a><br><a id="more"></a></p>
+<p>stack overflow: <a href="http://stackoverflow.com/questions/4310953/invalid-date-in-safari" target="_blank" rel="noopener">访问</a><br><a id="more"></a></p>
 <h1 id="2-input无法输入／选择"><a href="#2-input无法输入／选择" class="headerlink" title="2.input无法输入／选择"></a>2.input无法输入／选择</h1><p>error: 没有error</p>
 <p>描述: 在input元素上设置user-select: none造成无法正常输入、点击等</p>
 <p>解决方法：单独为safari设置该属性</p>
 <p><pre>-user-select: all;<br>-webkit-user-select: all; /<em> Chrome/Safari </em>/<br>-webkit-user-select: text; /<em> Safari only </em>/<br>-moz-user-select: all; /<em> Firefox </em>/<br>-ms-user-select: all; /<em> IE10+ </em>/<br></pre></p>
-<p>stack overflow: <a href="http://stackoverflow.com/questions/34372056/how-to-make-user-select-work-for-safari-browser" target="_blank" rel="external">访问</a></p>
+<p>stack overflow: <a href="http://stackoverflow.com/questions/34372056/how-to-make-user-select-work-for-safari-browser" target="_blank" rel="noopener">访问</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://HuJian21.github.io/2017/05/17/遇到safari兼容问题/" data-id="cj5tn3160000c7jq1eq20mmnu" class="article-share-link">Share</a>
+      <a data-url="http://HuJian21.github.io/2017/05/17/遇到safari兼容问题/" data-id="cjczl0e0p000gnyq1bq9c0j8x" class="article-share-link">分享</a>
       
       
-        <a href="http://HuJian21.github.io/2017/05/17/遇到safari兼容问题/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://HuJian21.github.io/2017/05/17/遇到safari兼容问题/#disqus_thread" class="article-comment-link">留言</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
@@ -119,7 +118,7 @@
 <nav id="article-nav">
   
     <a href="/2017/05/19/Angular常见错误记录/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
           Angular常见错误记录
@@ -129,7 +128,7 @@
   
   
     <a href="/2016/12/03/在mac上安装mongoDB/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">下一篇</strong>
       <div class="article-nav-title">在mac上安装mongoDB</div>
     </a>
   
@@ -168,7 +167,7 @@
     
       <div class="widget" id="toc-widget-fixed">
       
-        <strong class="toc-title">Content</strong>
+        <strong class="toc-title">文章目录</strong>
         <div class="toc-widget-list">
               <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-日期格式化"><span class="toc-number">1.</span> <span class="toc-text">1.日期格式化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-input无法输入／选择"><span class="toc-number">2.</span> <span class="toc-text">2.input无法输入／选择</span></a></li></ol>
           </div>
@@ -199,11 +198,11 @@
   
   <div class="outer">
     <div id="footer-left">
-      &copy; 2014 - 2017 color_cat&nbsp;|&nbsp;
-      Theme by <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+      &copy; 2014 - 2018 color_cat&nbsp;|&nbsp;
+      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
     </div>
      <div id="footer-right">
-      Contact&nbsp;|&nbsp;hujian201@gmail.com
+      联系方式&nbsp;|&nbsp;hujian201@gmail.com
     </div>
   </div>
 </footer>
@@ -216,8 +215,6 @@
     <a href="/archives" class="mobile-nav-link">归档</a>
   
     <a href="/about" class="mobile-nav-link">关于</a>
-  
-    <a href="/resume" class="mobile-nav-link">Resume</a>
   
 </nav>
     <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
