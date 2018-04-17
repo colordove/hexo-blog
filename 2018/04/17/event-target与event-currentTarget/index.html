@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript 细节 / 概念问题 BackUp | 秋兰青青</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Event.target 和 Event.currentTargettarget是点击的目标元素，currentTarget是活动对象元素。 当处于冒泡阶段时：如果点击子元素，target是被点击的子元素，currentTarget是一步一步从子元素到父级元素到冒泡的最外层元素。当处于捕获阶段时：如果点击子元素，target是被点击的子元素，currentTarget是从最外层元素一步一步到被点击">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 细节 &#x2F; 概念问题 BackUp">
+<meta property="og:url" content="http://colordove.github.io/hexo-blog/2018/04/17/event-target与event-currentTarget/index.html">
+<meta property="og:site_name" content="秋兰青青">
+<meta property="og:description" content="Event.target 和 Event.currentTargettarget是点击的目标元素，currentTarget是活动对象元素。 当处于冒泡阶段时：如果点击子元素，target是被点击的子元素，currentTarget是一步一步从子元素到父级元素到冒泡的最外层元素。当处于捕获阶段时：如果点击子元素，target是被点击的子元素，currentTarget是从最外层元素一步一步到被点击">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-17T12:06:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript 细节 &#x2F; 概念问题 BackUp">
+<meta name="twitter:description" content="Event.target 和 Event.currentTargettarget是点击的目标元素，currentTarget是活动对象元素。 当处于冒泡阶段时：如果点击子元素，target是被点击的子元素，currentTarget是一步一步从子元素到父级元素到冒泡的最外层元素。当处于捕获阶段时：如果点击子元素，target是被点击的子元素，currentTarget是从最外层元素一步一步到被点击">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/hexo-blog/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://colordove.github.io/hexo-blog"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/hexo-blog/">首页</a>
+        
+          <a class="main-nav-link" href="/hexo-blog/archives">归档</a>
+        
+          <a class="main-nav-link" href="/hexo-blog/about">关于</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/hexo-blog/" id="logo">秋兰青青</a>
+      </h1>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-event-target与event-currentTarget" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/hexo-blog/2018/04/17/event-target与event-currentTarget/" class="article-date">
+  <time datetime="2018-04-17T11:45:12.000Z" itemprop="datePublished">2018-04-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript 细节 / 概念问题 BackUp
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h2 id="Event-target-和-Event-currentTarget"><a href="#Event-target-和-Event-currentTarget" class="headerlink" title="Event.target 和 Event.currentTarget"></a>Event.target 和 Event.currentTarget</h2><p>target是点击的目标元素，currentTarget是活动对象元素。</p>
+<p>当处于冒泡阶段时：如果点击子元素，target是被点击的子元素，currentTarget是一步一步从子元素到父级元素到冒泡的最外层元素。<br>当处于捕获阶段时：如果点击子元素，target是被点击的子元素，currentTarget是从最外层元素一步一步到被点击的元素。</p>
+<p>参考文章: <a href="http://www.calledt.com/target-and-currenttarget/" target="_blank" rel="noopener">访问</a></p>
+<h2 id="Package-json里-和"><a href="#Package-json里-和" class="headerlink" title="Package.json里 ^ 和 ~"></a>Package.json里 ^ 和 ~</h2><p>指定版本：比如1.2.2，遵循“大版本.次要版本.小版本”的格式规定，安装时只安装指定版本。<br>波浪号（tilde）+指定版本：比如~1.2.2，表示安装1.2.x的最新版本（不低于1.2.2），但是不安装1.3.x，也就是说安装时不改变大版本号和次要版本号。<br>插入号（caret）+指定版本：比如ˆ1.2.2，表示安装1.x.x的最新版本（不低于1.2.2），但是不安装2.x.x，也就是说安装时不改变大版本号。需要注意的是，如果大版本号为0，则插入号的行为与波浪号相同，这是因为此时处于开发阶段，即使是次要版本号变动，也可能带来程序的不兼容。<br>latest：安装最新版本。</p>
+<p>参考文章: <a href="http://javascript.ruanyifeng.com/nodejs/packagejson.html" target="_blank" rel="noopener">访问</a></p>
+<h2 id="动态作用域与词法作用域"><a href="#动态作用域与词法作用域" class="headerlink" title="动态作用域与词法作用域"></a>动态作用域与词法作用域</h2><p>词法作用域 = 静态作用域 即定义时就约定好的作用域，主流语言均采用静态作用域</p>
+<p>词法变量有一个在编译时静态确定的作用域。词法变量的作用域可以是一个函数或一段代码，该变量在这段代码区域内可见（visibility）；在这段区域以外该变量不可见（或无法访问）。词法作用域里，取变量的值时，会检查函数定义时的文本环境，捕捉函数定义时对该变量的绑定。</p>
+<p>参考文档: <a href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E7%94%A8%E5%9F%9F" target="_blank" rel="noopener">访问</a></p>
+<h2 id="focus-focusin-focusout-blur-事件"><a href="#focus-focusin-focusout-blur-事件" class="headerlink" title="focus /focusin /focusout /blur 事件"></a>focus /focusin /focusout /blur 事件</h2><p>事件触发时间<br>focus:当focusable元素获得焦点时，不支持冒泡；<br>focusin:和focus一样，只是此事件支持冒泡；<br>blur:当focusable元素失去焦点时，不支持冒泡；<br>focusout:和blur一样，只是此事件支持冒泡；</p>
+<p>参考文章：<a href="https://segmentfault.com/a/1190000003942014" target="_blank" rel="noopener">访问</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://colordove.github.io/hexo-blog/2018/04/17/event-target与event-currentTarget/" data-id="cjg3mh06j0003aoq1116wwvdt" class="article-share-link">分享</a>
+      
+      
+        <a href="http://colordove.github.io/hexo-blog/2018/04/17/event-target与event-currentTarget/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-blog/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/hexo-blog/2018/01/29/Git常用命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Git常用命令</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+    <section id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+      </section>
+      
+       
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Event-target-和-Event-currentTarget"><span class="toc-number">1.</span> <span class="toc-text">Event.target 和 Event.currentTarget</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Package-json里-和"><span class="toc-number">2.</span> <span class="toc-text">Package.json里 ^ 和 ~</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态作用域与词法作用域"><span class="toc-number">3.</span> <span class="toc-text">动态作用域与词法作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#focus-focusin-focusout-blur-事件"><span class="toc-number">4.</span> <span class="toc-text">focus /focusin /focusout /blur 事件</span></a></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2018 color_cat&nbsp;|&nbsp;
+      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;hujian201@gmail.com
+    </div>
+  </div>
+</footer>
+ <script src="/hexo-blog/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/hexo-blog/" class="mobile-nav-link">首页</a>
+  
+    <a href="/hexo-blog/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/hexo-blog/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+
+<script>
+  var disqus_shortname = 'color-cats-blog';
+  
+  var disqus_url = 'http://colordove.github.io/hexo-blog/2018/04/17/event-target与event-currentTarget/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ <script src="/hexo-blog/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/hexo-blog/fancybox/jquery.fancybox.css">
+  <script src="/hexo-blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/hexo-blog/js/script.js"></script>
+<script src="/hexo-blog/js/elevator.js"></script>
+  </div>
+</body>
+</html>
